@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+    <h:head>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        <p:growl id="growl" life="3000" />
+        <div align="center">
+            <h:form id="loginForm">
+                
+            
+            <h:panelGroup id="globalContainerPanelGroup" layout="block" 
+                          style="width: 100%; min-height: 100%;">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel for="username" value="Username:" />
+                    <p:inputText id="username" value="#{LoginController.username}" required="true" label="username" />
+
+                    <h:outputLabel for="password" value="Password:" />
+                    <p:password id="password" value="#{LoginController.password}" required="true" label="password" />
+
+                    <f:facet name="footer">
+                        <p:commandButton value="Login" action="#{LoginController.validateUsernamePassword}" />
+                    </f:facet>  
+                </h:panelGrid>
+            </h:panelGroup>
+                </h:form>
+        </div>
+    </h:body>
+
